@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const FeatureCard = ({iconUrl,title,description,bgClass = "bg-primary-gradient" }) => {
-    return (
-        
+export const FeatureCard = ({ iconUrl,  title, description, bgClass = "bg-primary-gradient" }) => {
+
+    return (        
         <div className="feature-item bg-light rounded p-4" style={{height:"100%"}}>
           <div
             className={`d-inline-flex align-items-center justify-content-center ${bgClass} rounded-circle mb-4`}

@@ -18,7 +18,7 @@ export const Footer = () => {
               <p><i className="fa fa-phone-alt me-3"></i>
               <a href="tel:+917200490494" style={{color:"white"}}>+91-7200490494</a></p>
               <p><i className="fa fa-envelope me-3"></i>
-              <a href='mailto:support@yahvipay.com' style={{color:"white"}}> support@yahvipay.com</a></p>
+              <a href='mailto:support@yahvipay.com' style={{color:"white"}}>support@yahvipay.com</a></p>
               <div className="d-flex pt-2">
                 <a
                   className="btn btn-outline-light btn-social"

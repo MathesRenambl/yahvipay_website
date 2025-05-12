@@ -1,10 +1,8 @@
-import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-// Testimonials Data
 const reviewLists = [
   { name: "Kumaran", busniess: "Merchant", rating: "5", message: "I have been using for a few months now and it has been a great experience. The platform is user-friendly and their customer support is always there to help with any questions I have." },
   { name: "Priya S", busniess: "Customer", rating: "5", message: "I absolutely love this payments mobile app! It accepts all UPI transactions in India and makes it incredibly easy to pay for everything from groceries to bills. Highly recommend!" },
@@ -21,10 +19,8 @@ const Review = () => {
           <h5 className="text-primary-gradient fw-medium">Testimonial</h5>
           <h1 className="mb-5">What Say Our Clients!</h1>
         </div>
-
         {/* Swiper Carousel */}
-        <Swiper
-          
+        <Swiper          
           modules={[Navigation, Autoplay]}
           slidesPerView={1}
           spaceBetween={30}
@@ -46,11 +42,9 @@ const Review = () => {
               slidesPerView: 3,
             },
           }}
-          className="owl-carousel testimonial-carousel owl-loaded owl-drag"
-          
+          className="owl-carousel testimonial-carousel owl-loaded owl-drag"          
         >
           {reviewLists.map((item, index) => (
-
             <SwiperSlide key={index}>
               <div className="testimonial-item rounded p-4">
                 <div className="d-flex align-items-center mb-4">
@@ -73,7 +67,6 @@ const Review = () => {
               </div>
             </SwiperSlide>
           ))}
-
         </Swiper>
         {/* Custom Navigation Buttons */}
         <div className="owl-nav d-flex justify-content-center mt-4">

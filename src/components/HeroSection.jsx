@@ -15,15 +15,15 @@ const HeroSection = ({ title, displayBanner = false, displayDownload = false }) 
                             <div className="row g-4 mb-2" style= {{ padding: "10px" }}>
                                 <div className="col-sm-6  d-flex bg-home-text rounded" style= {{ alignItems : 'center', padding: "10px" }} data-wow-delay="0.5s">
                                     <div className="col-7">
-                                    <h5 className="home-text ms-2" style= {{ marginTop: "7px", textAlign: "center", height: "30px !important" }}>
-                                        Business
-                                    </h5>
+                                        <h5 className="home-text ms-2" style= {{ marginTop: "7px", textAlign: "center", height: "30px !important" }}>
+                                            Business
+                                        </h5>
                                     </div>
                                     <div className="col">
-                                    <a href="#" className="icon"><i className="fab fa-apple fa-2x home-text flex-shrink-0"></i></a>
+                                        <a href="#" className="icon"><i className="fab fa-apple fa-2x home-text flex-shrink-0"></i></a>
                                     </div>
                                     <div className="col">
-                                    <a href="#" className="icon"><i className="fab fa-android fa-2x home-text flex-shrink-0"></i></a>
+                                        <a href="#" className="icon"><i className="fab fa-android fa-2x home-text flex-shrink-0"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -31,15 +31,15 @@ const HeroSection = ({ title, displayBanner = false, displayDownload = false }) 
                             <div className="row g-4 mb-2" style= {{ padding: "10px" }}>
                                 <div className="col-sm-6  d-flex bg-home-text rounded" style= {{ alignItems : 'center', padding: "10px" }} data-wow-delay="0.5s">
                                     <div className="col-7">
-                                    <h5 className="home-text-agent ms-2" style= {{ marginTop: "7px", textAlign: "center", height: "30px !important" }}>
-                                        Agent
-                                    </h5>
+                                        <h5 className="home-text-agent ms-2" style= {{ marginTop: "7px", textAlign: "center", height: "30px !important" }}>
+                                            Agent
+                                        </h5>
                                     </div>
                                     {/* <div className="col">
-                                    <a href="#" className="icon"><i className="fab fa-apple fa-2x home-text-agent flex-shrink-0"></i></a>
+                                        <a href="#" className="icon"><i className="fab fa-apple fa-2x home-text-agent flex-shrink-0"></i></a>
                                     </div> */}
                                     <div className="col">
-                                    <a href="#" className="icon"><i className="fab fa-android fa-2x home-text-agent flex-shrink-0"></i></a>
+                                        <a href="#" className="icon"><i className="fab fa-android fa-2x home-text-agent flex-shrink-0"></i></a>
                                     </div>
                                 </div>
                             </div>

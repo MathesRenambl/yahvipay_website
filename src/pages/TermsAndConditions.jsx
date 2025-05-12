@@ -8,9 +8,9 @@ export const TermsAndConditions = () => {
   useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
+
   return (
     <>
-
     <NavBar/>
     <HeroSection title = {"Terms And Conditions"} displayBanner = {true} displayDownload = {false} />
     <div className="container-xxl py-5">

@@ -8,9 +8,9 @@ export const PrivacyPolicy = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
-
     <NavBar />
     <HeroSection title = {'Privacy Policy'} displayBanner = {true} displayDownload = {false} />
     <div className="container-xxl py-5">

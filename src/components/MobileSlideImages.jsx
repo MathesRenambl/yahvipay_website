@@ -16,35 +16,34 @@ const MobileSlideImages = () => {
     const slideWidth = 223;
     const totalWidth = bannerImages.length * slideWidth;
   
-    const updateCarousel = (index) => {
+    const UpdateCarousel = (index) => {
         activeIndexRef.current = index;
         
         if (stageRef.current) {
             stageRef.current.style.transform = `translate3d(-${index * slideWidth}px, 0px, 0px)`;
         }
         if (dotsRef.current) {
-            const dots = dotsRef.current.children;
-            
+            const dots = dotsRef.current.children;            
             for (let i = 0; i < dots.length; i++) {
                 dots[i].className = `owl-dot ${i === index ? 'active' : ''}`;
             }
         }
     };
 
-    const handleSlide = (index) => {
+    const HandleSlide = (index) => {
       
         if (timerRef.current) {
             clearInterval(timerRef.current);
         }
-        updateCarousel(index);
+        UpdateCarousel(index);
         timerRef.current = setInterval(() => {
             const nextIndex = (activeIndexRef.current + 1) % bannerImages.length;
-            updateCarousel(nextIndex);
+            UpdateCarousel(nextIndex);
         }, 3000);
     };
   
     useEffect(() => {
-        handleSlide(0);
+        HandleSlide(0);
         return () => { 
             if (timerRef.current) clearInterval(timerRef.current); 
         };
@@ -55,7 +54,6 @@ const MobileSlideImages = () => {
         <div className="owl-carousel screenshot-carousel owl-loaded owl-drag">
           <div className="owl-stage-outer">
             <div ref={stageRef} className="owl-stage" style={{ width: `${totalWidth}px`, transition: "all 1s ease 0s" }}>
-
               { bannerImages.length ? bannerImages.map((item, index) => (
                 <div className="owl-item" style={{ width: `${slideWidth}px` }} key={index}>
                   <img className="img-fluid" src={item.src} alt={item.name} />
@@ -65,9 +63,8 @@ const MobileSlideImages = () => {
           </div>
           
           <div className="owl-dots" ref={dotsRef}>
-
             { bannerImages.length ? bannerImages.map((item, index) => (
-              <div key={index} className={`owl-dot ${index === 0 ? 'active' : ''}`} onClick={() => handleSlide(index)}>
+              <div key={index} className={`owl-dot ${index === 0 ? 'active' : ''}`} onClick={() => HandleSlide(index)}>
                 <span></span>
               </div>
             )) : '' }

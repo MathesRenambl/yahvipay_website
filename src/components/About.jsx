@@ -34,14 +34,14 @@ export const About = () => {
             </div>  
             <div className="col-lg-6">
               <div className="responsive-video">
-              <iframe
-                width="100%"
-                height="315"
-                src="https://www.youtube.com/embed/jbxYpPRzgxM?autoplay=1&rel=0&mute=1&showinfo=0&controls=0&loop=1&autohide=1&modestbranding=1&playlist=jbxYpPRzgxM"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/jbxYpPRzgxM?autoplay=1&rel=0&mute=1&showinfo=0&controls=0&loop=1&autohide=1&modestbranding=1&playlist=jbxYpPRzgxM"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>

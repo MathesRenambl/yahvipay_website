@@ -11,13 +11,11 @@ function App() {
   return (
     <div className = "bg-white p-0">
       <Routes>
-        <Route path='/' element = {<LandingPage />}/>
-        
+        <Route path='/' element = {<LandingPage />}/>        
         <Route path='/privacypolicy' element = {<PrivacyPolicy />}/>
         <Route path='/termsandconditions' element = {<TermsAndConditions />}/>
         <Route path='/careers' element = {<Careers />}/>
-      </Routes>
-      
+      </Routes>      
     </div>
   )
 }

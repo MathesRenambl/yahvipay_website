@@ -2,28 +2,32 @@ import React, { useState } from 'react'
 
 export const ContactUs = () => {
 
-    const [formData,setFormData]=useState({name:'',email:'',subject:'',message:''});
-
+    const [ formData, setFormData ] = useState({
+      name:'',
+      email:'',
+      subject:'',
+      message:''
+    });
     const [successmessage,setSuccessMessage]=useState('');
     const [errormessage,setErrorMessage]=useState('');
+    
     const handleChange=(e)=>{
         setFormData((prev)=>({
             ...prev,
             [e.target.id]:e.target.value
         }))
     };
+
     const sendMail=(e)=>{
         e.preventDefault();
-
         if (!formData.name||!formData.email||formData.subject||formData.message){
             setErrorMessage('Please fill out all fields');
             setSuccessMessage('');
         }
-    else{
-    setSuccessMessage('Message sent successfully');
-    setErrorMessage('');
-
-            setFormData({name:'',email:'',subject:'',message:''});
+        else {
+          setSuccessMessage('Message sent successfully');
+          setErrorMessage('');
+          setFormData({name:'',email:'',subject:'',message:''});
         }
     };
     
@@ -116,7 +120,6 @@ export const ContactUs = () => {
                       />
                     </div>
                   )}
-
                   <button
                     className="btn btn-primary-gradient rounded-pill py-3 px-5"
                     type="submit"

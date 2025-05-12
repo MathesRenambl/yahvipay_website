@@ -1,90 +1,89 @@
 import React from 'react'
 import { FeatureCard } from './FeatureCard';
 
-export const Features = () => {
-  const features = [
-    {
-      iconUrl: "https://renambl.blr1.cdn.digitaloceanspaces.com/ypay/website/wallet.png",
-      title: "Payment",
-      description: "Accept payment from any UPI App. Payments get settled to your bank account.",
-      bgClass: "bg-primary-gradient"
-    },
-    {
-      iconUrl: "https://renambl.blr1.cdn.digitaloceanspaces.com/ypay/website/speaker.png",
-      title: "QR Sound Box",
-      description: "Get real-time payment transaction details on your myKaau App.",
-      bgClass: "bg-secondary-gradient"
-    },
-    {
-      iconUrl: "https://renambl.blr1.cdn.digitaloceanspaces.com/ypay/website/loan.png",
-      title: "Easy Loans",
-      description: "Get loans up to ₹5 Lakhs without any collateral at low interest rates.",
-      bgClass: "bg-primary-gradient"
-    }
-  ];
+const features = [
+  {
+    iconUrl: "https://renambl.blr1.cdn.digitaloceanspaces.com/ypay/website/wallet.png",
+    title: "Payment",
+    description: "Accept payment from any UPI App. Payments get settled to your bank account.",
+    bgClass: "bg-primary-gradient"
+  },
+  {
+    iconUrl: "https://renambl.blr1.cdn.digitaloceanspaces.com/ypay/website/speaker.png",
+    title: "QR Sound Box",
+    description: "Get real-time payment transaction details on your myKaau App.",
+    bgClass: "bg-secondary-gradient"
+  },
+  {
+    iconUrl: "https://renambl.blr1.cdn.digitaloceanspaces.com/ypay/website/loan.png",
+    title: "Easy Loans",
+    description: "Get loans up to ₹5 Lakhs without any collateral at low interest rates.",
+    bgClass: "bg-primary-gradient"
+  }
+];
 
-  const steps=[
-    {
-      icon: "fa-cog",
-    title: "Install App",
-    description: "Download the IOS or Android App from the store.",
-    delay: "0.1s",
+const steps=[
+  {
+    icon: "fa-cog",
+  title: "Install App",
+  description: "Download the IOS or Android App from the store.",
+  delay: "0.1s",
+  gradient: "bg-primary-gradient"
+  },
+  {
+    icon: "fa-phone-alt",
+    title: "Register Phone Number",
+    description: "Use your 10 digit phone number and confirm OTP",
+    delay: "0.3s",
+    gradient: "bg-secondary-gradient"
+  },
+  {
+    icon: "fa-user",
+    title: "Setup Profile",
+    description: "Update personal and business details including bank account information.",
+    delay: "0.3s",
+    gradient: "bg-secondary-gradient"
+  },
+  {
+    icon: "fa-address-card",
+    title: "Complete KYC",
+    description: "Fill up Aadhaar, Pan, GST details to speed up approval process.",
+    delay: "0.3s",
+    gradient: "bg-secondary-gradient"
+  },
+  {
+    icon: "fa-check",
+    title: "Enjoy Features",
+    description: "Within 5 minutes, you can complete the setup and start using QR code to your customers.",
+    delay: "0.5s",
     gradient: "bg-primary-gradient"
-    },
-    {
-      icon: "fa-phone-alt",
-      title: "Register Phone Number",
-      description: "Use your 10 digit phone number and confirm OTP",
-      delay: "0.3s",
-      gradient: "bg-secondary-gradient"
-    },
-    {
-      icon: "fa-user",
-      title: "Setup Profile",
-      description: "Update personal and business details including bank account information.",
-      delay: "0.3s",
-      gradient: "bg-secondary-gradient"
-    },
-    {
-      icon: "fa-address-card",
-      title: "Complete KYC",
-      description: "Fill up Aadhaar, Pan, GST details to speed up approval process.",
-      delay: "0.3s",
-      gradient: "bg-secondary-gradient"
-    },
-    {
-      icon: "fa-check",
-      title: "Enjoy Features",
-      description: "Within 5 minutes, you can complete the setup and start using QR code to your customers.",
-      delay: "0.5s",
-      gradient: "bg-primary-gradient"
-    }
-  ]
+  }
+]
 
- 
+export const Features = () => {
+
   return (
     <div>
         {/* Features start */}
         <div className="container-xxl py-5" id="feature">
-      <div className="container py-5 px-lg-5">
-        <div className="text-center" data-wow-delay="0.1s">
-          <h5 className="text-primary-gradient fw-medium">App Features</h5>
-          <h1 className="mb-5">Awesome Features</h1>
+        <div className="container py-5 px-lg-5">
+          <div className="text-center" data-wow-delay="0.1s">
+            <h5 className="text-primary-gradient fw-medium">App Features</h5>
+            <h1 className="mb-5">Awesome Features</h1>
+          </div>
+          <div className="row g-4">
+            {features.map((feature, index) => (
+              <div className="col-lg-4 col-md-6" key={index}
+              >
+                <FeatureCard {...feature} />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="row g-4">
-          {features.map((feature, index) => (
-            <div className="col-lg-4 col-md-6" key={index}
-            >
-              <FeatureCard {...feature} />
-            </div>
-          ))}
         </div>
-      </div>
-    </div>
-      {/* Features end */}
+    {/* Features end */}
     
-
-        {/* Screenshot start */}
+      {/* Screenshot start */}
       <div className="container-xxl py-5" id="screenshot" >
         <div className="container py-5 px-lg-5">
           <div className="row g-5 align-items-center">
@@ -165,10 +164,6 @@ export const Features = () => {
         </div>
       </div>
     </div>
-
-
-
-
 
       {/* <div className="container-xxl py-5" id="how-it-works" >
         <div className="container py-5 px-lg-5">
@@ -270,12 +265,7 @@ export const Features = () => {
       </div> */}
       {/* Process end */}
 
-
-
-
-
-
-        {/* Download start */}
+      {/* Download start */}
       <div className="container-xxl py-5" id="download" >
       <div className="container py-5 px-lg-5">
         <div className="row g-5 align-items-center">
