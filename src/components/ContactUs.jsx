@@ -2,14 +2,10 @@ import React, { useState } from 'react'
 
 export const ContactUs = () => {
 
-    const [ formData, setFormData ] = useState({
-      name:'',
-      email:'',
-      subject:'',
-      message:''
-    });
-    const [successmessage,setSuccessMessage]=useState('');
-    const [errormessage,setErrorMessage]=useState('');
+    const [ formData, setFormData ] = useState({name:'',email:'',subject:'',message:''});
+    const[successmessage,setSuccessMessage]=useState('');
+    const[errormessage,setErrorMessage]=useState('');
+    const[submittedvalues,setSubmittedValues]=useState(null);
     
     const handleChange=(e)=>{
         setFormData((prev)=>({
@@ -18,16 +14,58 @@ export const ContactUs = () => {
         }))
     };
 
+    function BackendF(data){
+      try{
+        const flag=true
+        if (!flag){
+          throw new Error('Failed to send data');
+        }
+        console.log(data);
+        return {status:'success',data};
+      } catch(error){
+        return {status:'error',message:error.message}
+      }
+      }
+
+
     const sendMail=(e)=>{
         e.preventDefault();
-        if (!formData.name||!formData.email||formData.subject||formData.message){
-            setErrorMessage('Please fill out all fields');
+        const{name,email,subject,message}=formData;
+        const nameregex= /^[a-zA-Z][a-zA-Z0-9_]{2,15}$/;
+        if (!nameregex.test(name) || name.length<5)
+       {
+            setErrorMessage('Name must be at least 5 characters long');
             setSuccessMessage('');
+            return;
         }
-        else {
-          setSuccessMessage('Message sent successfully');
-          setErrorMessage('');
-          setFormData({name:'',email:'',subject:'',message:''});
+    const emailregex=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(!emailregex.test(email)){
+          setErrorMessage('Enter a valid email');
+          setSuccessMessage('');
+          return;
+    }
+       if (subject.trim()===''){
+          setErrorMessage('Subject is empty');
+          setSuccessMessage('');
+          return;
+        }
+    if (message.trim()===''){
+      setErrorMessage('Message is empty');
+      setSuccessMessage('');
+      return;
+        }
+
+        const final=BackendF(formData);
+
+        if (final.status==='success'){
+
+        setSubmittedValues({...formData});
+        setSuccessMessage('Message sent successfully');
+        setErrorMessage('');
+        setFormData({name:'',email:'',subject:'',message:''});
+        } else{
+          setErrorMessage(final.message);
+          setSuccessMessage('');
         }
     };
     
@@ -128,6 +166,17 @@ export const ContactUs = () => {
                   </button>
                 </div>
               </form>
+
+              {submittedvalues &&(
+                <div className='mt-4 p-4 border rounded bg-light'>
+                  <h4>Submitted data:</h4>
+                  <p><strong>Name:</strong> {submittedvalues.name}</p>
+                  <p><strong>Email:</strong> {submittedvalues.email}</p>
+                  <p><strong>Subject:</strong> {submittedvalues.subject}</p>
+                  <p><strong>Message:</strong> {submittedvalues.message}</p>
+                </div>
+              )}
+
             </div>
           </div>
         </div>
