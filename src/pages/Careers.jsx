@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Careers.css';
 import NavBar from '../components/NavBar';
 import HeroSection from '../components/HeroSection';
@@ -64,6 +64,10 @@ const jobData = [
 export const Careers = () => {
 
   const [selectedJob, setSelectedJob] = useState(null);
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, []);
 
   const openModal = (job) => {
     setSelectedJob(job);
