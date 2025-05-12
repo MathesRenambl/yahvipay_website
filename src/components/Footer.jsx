@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -15,8 +14,10 @@ export const Footer = () => {
                 <i className="fa fa-map-marker-alt me-3"></i>Renambl Technologies
                 Pvt Ltd
               </p>
-              <p><i className="fa fa-phone-alt me-3"></i>+91-7200490494</p>
-              <p><i className="fa fa-envelope me-3"></i>support@renambl.com</p>
+              <p><i className="fa fa-phone-alt me-3"></i>
+              <a href="tel:+917200490494" style={{color:"white"}}>+91-7200490494</a></p>
+              <p><i className="fa fa-envelope me-3"></i>
+              <a href='mailto:support@yahvipay.com' style={{color:"white"}}> support@yahvipay.com</a></p>
               <div className="d-flex pt-2">
                 <a
                   className="btn btn-outline-light btn-social"
@@ -53,12 +54,10 @@ export const Footer = () => {
               <h4 className="text-white mb-4">Quick Link</h4>
               <a className="btn btn-link" href="#about">About Us</a>
               <a className="btn btn-link" href="#contact">Contact Us</a>
-              <Link className="btn btn-link" to={"/careers"}
-                >Careers</Link>
-              <Link className="btn btn-link" to={'/privacypolicy'}
-                >Privacy Policy</Link>
-              <Link className="btn btn-link" to={"/termsandconditions"}
-                >Terms & Condition</Link>
+              <a className="btn btn-link" href="privacypolicy.html"
+                >Privacy Policy</a>
+              <a className="btn btn-link" href="termsandconditions.html"
+                >Terms & Condition</a>
             </div>
             {/* <!-- <div class="col-md-6 col-lg-3">
                         <h4 class="text-white mb-4">Newsletter</h4>
