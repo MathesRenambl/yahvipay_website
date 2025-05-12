@@ -1,0 +1,23 @@
+.slider-wrapper {
+    height: 100px;
+    width: 100%;
+  }
+  
+  .slider-track {
+    width: max-content;
+    animation: scroll-left 30s linear infinite;
+  }
+  
+  .slide {
+    min-width: 150px;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
