@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import './Careers.css';
-import NavBar from '../components/NavBar';
-import HeroSection from '../components/HeroSection';
-import { Footer } from '../components/Footer';
 
 export const Careers = () => {
   const [selectedJob, setSelectedJob] = useState(null);
@@ -71,9 +68,6 @@ export const Careers = () => {
   };
 
   return (
-    <>
-    <NavBar />
-    <HeroSection title={'Careers'} displayBanner = {false} displayDownload ={false} />
     <div>
       <div className='careers_container'>
         <div>
@@ -120,39 +114,55 @@ export const Careers = () => {
           <div className="modal-content">
             {selectedJob && (
               <>
-                <div className="modal-header">
-                  <h5 className="modal-title">{selectedJob.title}</h5>
+                <div className="modal-header border-0 pb-0">
+                  <h5 className="modal-title fw-bold text primary" >{selectedJob.title}</h5>
                   <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div className="modal-body">
-                  <p><strong>Job Id:</strong> {selectedJob.jobId}</p>
+                <div className="modal-body pt-2">
+                  <div className='mb-3'>
+                  <p className='mb-1'><strong>Job Id:</strong> {selectedJob.jobId}</p>
 
 
-                  <p><strong>Experience:</strong> {selectedJob.experience}</p>
-                  <p><strong>CTC:</strong> {selectedJob.ctc}</p>
-                  <p><strong>Location:</strong> {selectedJob.location}</p>
-                  <p><strong>Qualifications:</strong></p>
-                  <ul>
+                  <p className='mb-1'><strong>Experience:</strong> {selectedJob.experience}</p>
+                  <p className='mb-1'><strong>CTC:</strong> {selectedJob.ctc}</p>
+                  <p className='mb-1'><strong>Location:</strong> {selectedJob.location}</p>
+
+                  </div>
+
+                  <div >
+                  <h6 >Qualifications:</h6>
+                  <ul >
                     {selectedJob.qualification.map((q, i) => (
                       <li key={i}>{q}</li>
                     ))}
                   </ul>
+                  </div>
+                  
 
-                  <p><strong>Key Responsibitites</strong></p>
-                  <ul>
+                  <div >
+                  <h6>Key Responsibitites</h6>
+                  <ul >
                     {selectedJob.keyresponsibilites.map((q,i)=>(
                         <li key={i}>{q}</li>
                     ))}
                   </ul>
+                    </div>
+
+                  <div className='text-center mt-4' >
+
+                  <a href="mailto:support@renambl.com" className="opening" style={{backgroundColor:"#e32f45",color:'white',display:"inline-block"}}>Apply now</a>
+
+                  </div>
                 </div>
               </>
             )}
           </div>
         </div>
       </div>
+
+
+
+      
     </div>
-    
-    <Footer />
-    </>
   );
 };
