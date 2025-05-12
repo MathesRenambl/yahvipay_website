@@ -31,9 +31,9 @@ export const ContactUs = () => {
     const sendMail=(e)=>{
         e.preventDefault();
         const{name,email,subject,message}=formData;
-        const nameregex= /^[a-zA-Z][a-zA-Z0-9_]{2,15}$/;
+        const nameregex= /^[a-zA-Z][a-zA-Z0-9_]{5,15}$/;
         if (!nameregex.test(name) || name.length<5)
-       {
+           {
             setErrorMessage('Name must be at least 5 characters long');
             setSuccessMessage('');
             return;
