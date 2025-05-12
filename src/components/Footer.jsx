@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -54,10 +55,12 @@ export const Footer = () => {
               <h4 className="text-white mb-4">Quick Link</h4>
               <a className="btn btn-link" href="#about">About Us</a>
               <a className="btn btn-link" href="#contact">Contact Us</a>
-              <a className="btn btn-link" href="privacypolicy.html"
-                >Privacy Policy</a>
-              <a className="btn btn-link" href="termsandconditions.html"
-                >Terms & Condition</a>
+              <Link className="btn btn-link" to={"/careers"}
+                >Careers</Link>
+              <Link className="btn btn-link" to={'/privacypolicy'}
+                >Privacy Policy</Link>
+              <Link className="btn btn-link" to={"/termsandconditions"}
+                >Terms & Condition</Link>
             </div>
             {/* <!-- <div class="col-md-6 col-lg-3">
                         <h4 class="text-white mb-4">Newsletter</h4>

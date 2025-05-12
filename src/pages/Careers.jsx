@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './Careers.css';
+import NavBar from '../components/NavBar';
+import HeroSection from '../components/HeroSection';
+import { Footer } from '../components/Footer';
 
 export const Careers = () => {
   const [selectedJob, setSelectedJob] = useState(null);
@@ -68,6 +71,9 @@ export const Careers = () => {
   };
 
   return (
+    <>
+    <NavBar />
+    <HeroSection title={'Careers'} displayBanner = {false} displayDownload ={false} />
     <div>
       <div className='careers_container'>
         <div>
@@ -159,10 +165,9 @@ export const Careers = () => {
           </div>
         </div>
       </div>
-
-
-
-      
     </div>
+    
+    <Footer />
+    </>
   );
 };
